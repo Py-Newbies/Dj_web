@@ -1,0 +1,3 @@
+# ignore pycharm generated files
+__pycache__/
+.idea/
