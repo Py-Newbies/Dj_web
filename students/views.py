@@ -16,8 +16,7 @@ def details(request):
     password = request.GET.get('token')
     user = validate_user(username, password)
     if user:
-        print(user.name)
-        return HttpResponse("<br><h1>here we load the student info</h1>")
+        return render(request, "students/update.html", {'student': user})
         # return render(request, 'home.html')
     else:
         return HttpResponse("kindly login before proceeding further")
@@ -25,7 +24,7 @@ def details(request):
 
 def create(request):
     if request.method == "POST":
-        name = request.POST.get("name")
+        name = "-".join(request.POST.get("name").split())
         number = request.POST.get("num")
         user = models.Student(name=name, mobile_num=number)
         user.save()
@@ -33,4 +32,4 @@ def create(request):
         url = f"http://127.0.0.1:4040/students/details?name={user.name}&token={user.token}"
         return HttpResponse(url)
     else:
-        return render(request, "create_user.html")
+        return render(request, "students/create_user.html")
