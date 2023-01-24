@@ -2,3 +2,20 @@ assuming portals are the consultancy owners
 students is the portal with all the student info with portal_owner
 
 when portal staff logs in to dahsboard, they can view info related to only their company
+
+mailID:
+country - searchable drop down
+purpose -> student or work
+
+student:
+course: UG/ master -> specilisation text field
+UG GPA
+10 marks pdf/jpeg
+12 marks pdf/jpeg
+degree cert
+consolidated marks list pdf/jpeg
+
+main dash board is frogg
+
+student app
+partals -> consultancies
