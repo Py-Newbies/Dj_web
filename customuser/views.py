@@ -1,7 +1,6 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.hashers import make_password
 from django.shortcuts import render, redirect
-from django.views.decorators.csrf import csrf_exempt
 from . import models
 
 
@@ -9,7 +8,6 @@ def home(request):
     return render(request, "home.html")
 
 
-@csrf_exempt
 def connect(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -24,7 +22,7 @@ def connect(request):
 
 def create_customer(request):
     if request.method == 'POST':
-        first_name = request.POST['name']
+        first_name = request.POST['Name']
         email = request.POST['email']
         department = request.POST['department']
         password = request.POST['password']
@@ -33,4 +31,9 @@ def create_customer(request):
                                      department=department, password=hashed_password)
         customer.save()
         return redirect('home')
-    return render(request, 'create_customer.html')
+    return render(request, 'createUser.html')
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
