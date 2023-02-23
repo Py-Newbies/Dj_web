@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add a Customer</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="id_name">Name:</label>
+      <input type="text" name="name" required id="id_name">
+    </div>
+    <div>
+      <label for="id_email">Email:</label>
+      <input type="email" name="email" required id="id_email">
+    </div>
+    <div>
+      <label for="id_phone">Phone:</label>
+      <input type="text" name="phone" required id="id_phone">
+    </div>
+    <div>
+      <label for="department">department:</label>
+      <input type="text" name="department" required id="department">
+    </div>
+
+    <div>
+      <label for="pass">pass:</label>
+      <input type="text" name="password" required id="pass">
+    </div>
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
