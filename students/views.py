@@ -26,10 +26,15 @@ def create(request):
     if request.method == "POST":
         name = "-".join(request.POST.get("name").split())
         number = request.POST.get("num")
-        user = models.Student(name=name, mobile_num=number)
+        user = models.Student(name=name, mobile_num=number, created_by=request.user)
         user.save()
         # fixme this is temporary only
         url = f"http://127.0.0.1:4040/students/details?name={user.name}&token={user.token}"
         return HttpResponse(url)
     else:
         return render(request, "students/create_user.html")
+
+
+def dashboard(request):
+    return render(request, "students/dashboard.html")
+

@@ -1,3 +1,22 @@
+www.frrog.com/
+www.frrog.com/leads/
+www.frrog.com/leads/create
+
+leads is nothing but consultancy owners
+
+www.frrog.com/consultancy_name/branch/
+www.frrog.com/consultancy_name/branch/employees/
+www.frrog.com/consultancy_name/branch/employees/create
+
+www.frrog.com/consultancy_name/branch/employee/login
+
+logged in employee students or all the students from that consultancy
+www.frrog.com/consultancy_name/branch/students/
+www.frrog.com/consultancy_name/branch/students/create
+
+www.frrog.com/consultancy_name/branch/student/details?name={user.name}&token={user.token}
+
+
 assuming portals are the consultancy owners
 students is the portal with all the student info with portal_owner
 
@@ -18,4 +37,4 @@ consolidated marks list pdf/jpeg
 main dash board is frogg
 
 student app
-partals -> consultancies
+partals -> consultancies-> url end point staff
